@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
-using WLib.Core.Data.Domain.Entities;
+using WLib.Core.Bll.DataAccess.Model;
 
-namespace WLib.Core.Data.Data.Meta
+namespace WLib.Core.Bll.DataAccess
 {
     public interface IDataAccess : IBaseDataAccess, IDisposable
     {
@@ -19,5 +18,11 @@ namespace WLib.Core.Data.Data.Meta
         Task<int> ValidateAndSaveAsync(bool noTracking = false);
 
         Task InsertOrUpdateAsync<T>(T entity) where T : BaseEntity, new();
+        /// <summary>
+        /// Generic method to get items by implementing typ
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        IQueryable<T> SetOf<T>() where T : class;
     }
 }

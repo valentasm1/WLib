@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
-using WLib.Core.Data.Domain.Entities;
+using WLib.Core.Bll.DataAccess.Model;
 
-namespace WLib.Core.Data.Data.Meta
+namespace WLib.Core.Bll.DataAccess
 {
     public interface IBaseDataAccess : IDisposable
     {
@@ -14,15 +13,8 @@ namespace WLib.Core.Data.Data.Meta
 
         IQueryable<T> GetAll<T>(params Expression<Func<T, object>>[] includes) where T : class;
 
-        Task InsertAsync<T>(T entity) where T : class;
 
-        Task InsertRangeAsync<T>(IEnumerable<T> entities) where T : class;
-
-        void Update<T>(T entity) where T : class;
-
-        void Update<T, O>(T entity, Expression<Func<T, O>> onlyFields) where T : class where O : class;
-
-        Task InsertOrUpdateAsync<T, O>(T entity, Expression<Func<T, O>> onlyFields = null) where T : BaseEntity, new() where O : class;
+        Task<T> InsertOrUpdateAsync<T, O>(T entity, Expression<Func<T, O>> onlyFields = null) where T : BaseEntity, new() where O : class;
 
         void Delete<T>(T entity) where T : class;
 
@@ -32,7 +24,7 @@ namespace WLib.Core.Data.Data.Meta
 
         void Rollback();
 
-        Task<int> SqlExecute(string sql, params object[] parameters);
+        int SqlExecute(string sql, params object[] parameters);
 
         Task<int> SqlExecuteAsync(string sql, params object[] parameters);
     }

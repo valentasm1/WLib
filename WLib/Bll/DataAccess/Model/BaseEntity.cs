@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 using WLib.Core.Bll.Model.Meta;
 
-namespace WLib.Core.Data.Domain.Entities
+namespace WLib.Core.Bll.DataAccess.Model
 {
     public abstract class BaseEntity : IEntity<int>, IEquatable<BaseEntity>
     {
