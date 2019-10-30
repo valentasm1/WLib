@@ -5,7 +5,7 @@ using WLib.Core.Bll.Model.Meta;
 
 namespace WLib.Core.Bll.DataAccess.Model
 {
-    public abstract class BaseEntity : IEntity<int>, IEquatable<BaseEntity>
+    public abstract class BaseEntity : IEntity, IEquatable<BaseEntity>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

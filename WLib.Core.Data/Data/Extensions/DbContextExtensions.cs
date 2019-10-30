@@ -11,21 +11,24 @@ namespace WLib.Core.Data.Data.Extensions
 {
     public static class DbContextExtensions
     {
-        public static void RemovePluralizingTableNameConvention(this ModelBuilder modelBuilder)
-        {
-            foreach (IMutableEntityType entity in modelBuilder.Model.GetEntityTypes())
-            {
-                entity.Relational().TableName = entity.DisplayName();
-            }
-        }
+        //public static void RemovePluralizingTableNameConvention(this ModelBuilder modelBuilder)
+        //{
+        //    foreach (IMutableEntityType entity in modelBuilder.Model.GetEntityTypes())
+        //    {
+        //        entity.SetTableName(entity.DisplayName());
+        //    }
+        //}
 
-        public static void RemoveFromTableName(this ModelBuilder modelBuilder, string replace)
-        {
-            foreach (IMutableEntityType entity in modelBuilder.Model.GetEntityTypes())
-            {
-                entity.Relational().TableName = entity.Relational().TableName.Replace(replace, string.Empty);
-            }
-        }
+        //public static void RemoveFromTableName(this ModelBuilder modelBuilder, string replace)
+        //{
+        //    foreach (IMutableEntityType entity in modelBuilder.Model.GetEntityTypes())
+        //    {
+        //        var tableName = entity.GetTableName();
+        //        entity.SetTableName(tableName.Replace(replace, ""));
+        //    }
+        //}
+
+
 
         public static bool AllMigrationsApplied(this DbContext context)
         {

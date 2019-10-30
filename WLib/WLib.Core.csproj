@@ -5,12 +5,12 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyVersion>0.0.0.1</AssemblyVersion>
     <FileVersion>1.0.0.1</FileVersion>
-    <Version>1.0.10</Version>
+    <Version>1.0.21</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.6.0" />
   </ItemGroup>
 
 </Project>

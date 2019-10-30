@@ -4,8 +4,8 @@ using System.Text;
 
 namespace WLib.Core.Bll.Model.Meta
 {
-    public interface IEntity<TId>
+    public interface IEntity
     {
-        TId Id { get; set; }
+        int Id { get; set; }
     }
 }

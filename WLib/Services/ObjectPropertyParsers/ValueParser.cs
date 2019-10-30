@@ -62,7 +62,7 @@ namespace WLib.Core.Services.SystemServices
             if (value == null)
                 return Default(typeToConvertTo);
 
-            if ((string.IsNullOrEmpty(value.ToString()) == true) && (value is IEntity<int> == false))
+            if ((string.IsNullOrEmpty(value.ToString()) == true) && (value is IEntity == false))
                 return Default(typeToConvertTo);
             string type = typeToConvertTo.FullName.ToLower();
             object ret = value;
@@ -107,9 +107,9 @@ namespace WLib.Core.Services.SystemServices
                 {
                     ret = System.Convert.ToInt32(value);
                 }
-                else if (typeof(IEntity<int>).IsAssignableFrom(typeToConvertTo))
+                else if (typeof(IEntity).IsAssignableFrom(typeToConvertTo))
                 {
-                    if (value is IEntity<int>)
+                    if (value is IEntity)
                         return ret;
                     try
                     {
