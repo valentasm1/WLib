@@ -2,15 +2,49 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace WLib.Core.Mobile.Xf.Services.Utils
 {
-    public class AppUtils
+    public interface IAppUtils
+    {
+        bool IsConnected();
+
+        Task<string> GetDeviceId();
+    }
+
+
+
+    public class AppUtils : IAppUtils
     {
         //https://docs.microsoft.com/en-us/xamarin/essentials/maps?context=xamarin%2Fxamarin-forms&tabs=android
 
+        public bool IsConnected()
+        {
+            var current = Connectivity.NetworkAccess;
 
+            switch (current)
+            {
+                case NetworkAccess.None:
+                case NetworkAccess.Unknown:
+                    return false;
+                case NetworkAccess.Local:
+                case NetworkAccess.ConstrainedInternet:
+                case NetworkAccess.Internet:
+                    return true;
+                default:
+                    return true;
+            }
+        }
+
+        public virtual async Task<string> GetDeviceId()
+        {
+            var userName = $"{DeviceInfo.Name} {DeviceInfo.Model} {DeviceInfo.Platform}";
+
+            return userName;
+        }
         public static Dictionary<string, string> ParseNullableQuery(string queryString)
         {
             var accumulator = new Dictionary<string, string>();
