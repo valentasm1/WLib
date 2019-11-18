@@ -7,6 +7,7 @@ namespace WLib.Core.Mobile.ViewModels
 {
     public interface IViewModel
     {
-        Task InitializeAsync(Dictionary<string, string> args);
+        Task InitializeAsync();
+        Task FinalizeAsync();
     }
 }

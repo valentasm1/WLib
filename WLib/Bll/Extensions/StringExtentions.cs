@@ -112,6 +112,37 @@ namespace WLib.Core.Bll.Extensions
             return int.TryParse(input, out var number);
         }
 
+        public static string TrimStart(this string input, string word)
+        {
+            var index = input.IndexOf(word);
+            if (index == -1) return input;
+            if (index == 0)
+            {
+                return input.Remove(word.Length);
+            }
+
+            return input;
+
+        }
+
+        public static string Between(this string inputString, string firstString, string secondString)
+        {
+            if (string.IsNullOrEmpty(inputString) || string.IsNullOrEmpty(firstString) || string.IsNullOrEmpty(secondString))
+                return string.Empty;
+
+            var firstOccur = inputString.IndexOf(firstString, StringComparison.OrdinalIgnoreCase);
+            if (firstOccur == -1) return string.Empty;
+
+            var secondOccur = inputString.IndexOf(secondString, firstOccur, StringComparison.OrdinalIgnoreCase);
+            if (secondOccur == -1) return string.Empty;
+            if (firstOccur > secondOccur) return string.Empty;
+
+
+            int startPos = (inputString.IndexOf(firstString, StringComparison.OrdinalIgnoreCase) + firstString.Length);
+            int endPos = inputString.IndexOf(secondString, startPos, StringComparison.OrdinalIgnoreCase);
+
+            return inputString.Substring(startPos, endPos - startPos).Trim();
+        }
         public static bool ToBool(this string input, bool defaultValue)
         {
             if (string.IsNullOrEmpty(input)) return defaultValue;

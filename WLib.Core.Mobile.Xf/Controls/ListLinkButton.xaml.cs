@@ -31,13 +31,6 @@ namespace WLib.Core.Mobile.Xf.Controls
             set => SetValue(TextFontFamilyProperty, value);
         }
 
-        public static readonly BindableProperty LinkProperty = BindableProperty.Create("Link", typeof(string), typeof(string), string.Empty);
-
-        public string Link
-        {
-            get => (string)GetValue(LinkProperty);
-            set => SetValue(LinkProperty, value);
-        }
 
         public static readonly BindableProperty TextProperty = BindableProperty.Create("Text", typeof(string), typeof(string), string.Empty);
 

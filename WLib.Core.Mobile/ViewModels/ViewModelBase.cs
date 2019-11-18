@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 using PropertyChanged;
-using WLib.Core.Mobile.Services.Navigation;
 
 namespace WLib.Core.Mobile.ViewModels
 {
@@ -13,7 +12,8 @@ namespace WLib.Core.Mobile.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public virtual Task InitializeAsync(Dictionary<string, string> args) => Task.CompletedTask;
+        public virtual Task InitializeAsync() => Task.CompletedTask;
+        public virtual Task FinalizeAsync() => Task.CompletedTask;
 
     }
 }

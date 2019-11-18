@@ -16,15 +16,19 @@ namespace WLib.Core.Mobile.Xf.Pages
             BindingContext = ViewModel;
         }
 
-        public Dictionary<string, string> NavigationArgs { get; set; }
-
         public IViewModel ViewModel { get; private set; }
         protected abstract string NavigationRoute { get; }
 
         protected override async void OnAppearing()
         {
-            await ViewModel.InitializeAsync(NavigationArgs);
+            await ViewModel.InitializeAsync();
             base.OnAppearing();
+        }
+
+        protected override async void OnDisappearing()
+        {
+            await ViewModel.FinalizeAsync();
+            base.OnDisappearing();
         }
 
     }
