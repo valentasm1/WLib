@@ -18,9 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Controls\ListLinkButton.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    <Folder Include="Controls\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>

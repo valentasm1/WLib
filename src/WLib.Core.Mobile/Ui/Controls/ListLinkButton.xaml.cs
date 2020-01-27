@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace WLib.Core.Mobile.Xf.Controls
+namespace WLib.Core.Mobile.Ui.Controls
 {
     public partial class ListLinkButton : ContentView
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WLib.Core.Mobile.Services.AppServices;
 using WLib.Core.Mobile.ViewModels;
-using WLib.Core.Mobile.Xf.Services.AppServices;
 using Xamarin.Forms;
 
 namespace WLib.Core.Mobile.Xf.Pages

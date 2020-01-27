@@ -51,6 +51,14 @@ namespace WLib.Core.Mobile.Xf.Services.AppServices
             _container.UseInstance<TInterface>((TInterface)instance);
         }
 
+        /// <summary>
+        /// Using shell Routing.RegisterRoute(route, typeof(TPage));
+        /// AND
+        /// Register<IViewModel, TViewModel>(route);
+        /// </summary>
+        /// <typeparam name="TViewModel"></typeparam>
+        /// <typeparam name="TPage"></typeparam>
+        /// <param name="route"></param>
         public void RegisterRoute<TViewModel, TPage>(string route) where TViewModel : IViewModel where TPage : ContentPage
         {
             Routing.RegisterRoute(route, typeof(TPage));
