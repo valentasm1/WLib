@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>WLib.Core.Mobile</id>
+    <version>1.0.8</version>
+    <title>WLib.Core.Mobile</title>
+    <authors>Valentas</authors>
+    <owners>tfoscipe</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Personal nuget
+    </description>
+    <tags>Xamarin.Forms xamarin forms popup page modal</tags>
+    <dependencies>
+      <dependency id="Xamarin.Forms" version="4.4.0.991537" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="readme.txt" target="readme.txt" />
+    <!--PCL-->
+    <file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.Mobile.dll" target="lib\netstandard2.0" />
+    <file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.Mobile.pdb" target="lib\netstandard2.0" />        
+    <!--Android-->
+	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.dll" target="lib\MonoAndroid" />    
+	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.pdb" target="lib\MonoAndroid" />    
+	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.Andriod.dll" target="lib\MonoAndroid" />    
+	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.Andriod.pdb" target="lib\MonoAndroid" />  
+    <!--IOS
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.dll" target="lib\MonoTouch" />
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.pdb" target="lib\MonoTouch" />
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.dll" target="lib\Xamarin.IOS" />
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.pdb" target="lib\Xamarin.IOS" />
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.IOS.dll" target="lib\MonoTouch" />
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.IOS.pdb" target="lib\MonoTouch" />
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.IOS.dll" target="lib\Xamarin.IOS" />
+    <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.IOS.pdb" target="lib\Xamarin.IOS" />
+	-->
+    <!--wpa81-->
+    <!--<file src="..\src\Rg.Plugins.Popup\bin\Release\Rg.Plugins.Popup.dll" target="lib\wpa81" />
+      <file src="..\src\Rg.Plugins.Popup.WinPhone\bin\Release\Rg.Plugins.Popup.WinPhone.dll" target="lib\wpa81" />-->
+    <!--uwp-->
+
+  </files>
+</package>
