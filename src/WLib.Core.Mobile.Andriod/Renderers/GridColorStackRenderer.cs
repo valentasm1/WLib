@@ -14,16 +14,16 @@ using WLib.Core.Mobile.Ui.Controls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(StackLayoutGradient), typeof(GradientColorStackRenderer))]
+[assembly: ExportRenderer(typeof(GridGradient), typeof(GridColorStackRenderer))]
 namespace WLib.Core.Mobile.Andriod.Renderers
 {
-    public class GradientColorStackRenderer : VisualElementRenderer<StackLayout>
+    public class GridColorStackRenderer : VisualElementRenderer<Grid>
     {
         private Color StartColor { get; set; }
         private Color EndColor { get; set; }
 
         readonly Context _context;
-        public GradientColorStackRenderer(Context context) : base(context)
+        public GridColorStackRenderer(Context context) : base(context)
         {
             _context = context;
         }
@@ -51,7 +51,7 @@ namespace WLib.Core.Mobile.Andriod.Renderers
             base.DispatchDraw(canvas);
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<StackLayout> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Grid> e)
         {
             base.OnElementChanged(e);
 
@@ -61,7 +61,7 @@ namespace WLib.Core.Mobile.Andriod.Renderers
             }
             try
             {
-                var stack = e.NewElement as StackLayoutGradient;
+                var stack = e.NewElement as GridGradient;
                 this.StartColor = stack.StartColor;
                 this.EndColor = stack.EndColor;
             }

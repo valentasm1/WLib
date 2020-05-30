@@ -11,7 +11,7 @@ namespace WLib.Core.Services
     //clones object public properties to another object
     //uses Expressions (compiled and saved to static) - faster than Reflection
     //(compilation happens with every new generic type call cause it's a new static class each time)
-    public static class PropMapper<TInput, TOutput>
+    public static class PropMapperObsolete<TInput, TOutput>
     {
         private static readonly Func<TInput, TOutput> _cloner;
         private static readonly Action<TInput, TOutput> _copier;
@@ -19,7 +19,7 @@ namespace WLib.Core.Services
         private static readonly IEnumerable<PropertyInfo> _sourceProperties;
         private static readonly IEnumerable<PropertyInfo> _destinationProperties;
 
-        static PropMapper()
+        static PropMapperObsolete()
         {
             _destinationProperties = typeof(TOutput)
                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)

@@ -69,6 +69,7 @@ namespace WLib.Core.Mobile.Services.Web
                 //var jsonObj = JsonConvert.SerializeObject(eventLog);
                 _webClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+                
                 await _webClient.PostAsync(_submitUrl, new StringContent(jsonObj, Encoding.UTF8, "application/json"));
             }
             catch (Exception exception)

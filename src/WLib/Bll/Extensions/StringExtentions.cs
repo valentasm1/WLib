@@ -100,6 +100,17 @@ namespace WLib.Core.Bll.Extensions
             return !decimal.TryParse(input, out var result) ? defaultValue : result;
         }
 
+
+        public static string Remove(this string input, string valueToSearch)
+        {
+            if (string.IsNullOrEmpty(input) || string.IsNullOrEmpty(valueToSearch))
+                return input;
+
+            int startPos = input.IndexOf(valueToSearch, StringComparison.OrdinalIgnoreCase) + valueToSearch.Length;
+
+            return startPos == -1 ? input: input.Remove(startPos);
+        }
+
         public static int? ToInt(this string input, int? defaultValue)
         {
             if (string.IsNullOrEmpty(input)) return defaultValue;
