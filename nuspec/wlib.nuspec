@@ -2,11 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>WLib.Core.Mobile</id>
-    <version>1.0.16</version>
+    <version>1.0.24</version>
     <title>WLib.Core.Mobile</title>
     <authors>Valentas</authors>
     <owners>tfoscipe</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<license type="expression">MIT</license>
     <description>
       Personal nuget
     </description>
@@ -22,11 +23,15 @@
     <!--PCL-->
     <file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.Mobile.dll" target="lib\netstandard2.0" />
     <file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.Mobile.pdb" target="lib\netstandard2.0" />        
+    <file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.pdb" target="lib\netstandard2.0" />        
+    <file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.dll" target="lib\netstandard2.0" />        
     <!--Android-->
 	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.dll" target="lib\MonoAndroid" />    
 	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.pdb" target="lib\MonoAndroid" />    
 	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.Andriod.dll" target="lib\MonoAndroid" />    
 	<file src="..\src\WLib.Core.Mobile.Andriod\bin\Release\WLib.Core.Mobile.Andriod.pdb" target="lib\MonoAndroid" />  
+	<file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.pdb" target="lib\MonoAndroid" />        
+    <file src="..\src\WLib.Core.Mobile\bin\Release\netstandard2.0\WLib.Core.dll" target="lib\MonoAndroid" />        
     <!--IOS
     <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.dll" target="lib\MonoTouch" />
     <file src="..\src\Rg.Plugins.Popup.IOS\bin\Release\Rg.Plugins.Popup.pdb" target="lib\MonoTouch" />

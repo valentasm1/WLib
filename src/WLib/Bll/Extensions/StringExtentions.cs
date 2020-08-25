@@ -108,7 +108,7 @@ namespace WLib.Core.Bll.Extensions
 
             int startPos = input.IndexOf(valueToSearch, StringComparison.OrdinalIgnoreCase) + valueToSearch.Length;
 
-            return startPos == -1 ? input: input.Remove(startPos);
+            return startPos == -1 ? input : input.Remove(startPos);
         }
 
         public static int? ToInt(this string input, int? defaultValue)
@@ -157,6 +157,16 @@ namespace WLib.Core.Bll.Extensions
         public static bool ToBool(this string input, bool defaultValue)
         {
             if (string.IsNullOrEmpty(input)) return defaultValue;
+
+            if (input == "1")
+            {
+                return true;
+            }
+
+            if (input == "0")
+            {
+                return false;
+            }
 
             return bool.TryParse(input, out var exist) ? exist : defaultValue;
         }

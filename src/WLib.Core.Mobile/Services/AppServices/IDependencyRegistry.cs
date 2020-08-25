@@ -25,6 +25,9 @@ namespace WLib.Core.Mobile.Services.AppServices
             _container = container;
 
         }
+
+        //https://bitbucket.org/dadhi/dryioc/wiki/ReuseAndScopes
+        //TODO fix
         public void Register<TService, TImplementation>(string key = null) where TImplementation : TService
         {
             _container.Register<TService, TImplementation>(serviceKey: key, reuse: new SingletonReuse());
