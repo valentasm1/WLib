@@ -17,6 +17,7 @@ namespace Wlib.Core.Mobile.Demo.ViewModels
 
         private async Task StartActivity()
         {
+            //DependencyService.Register<IYaseaaStreaming>();
             DependencyService.Get<IYaseaaStreaming>().ShowStreamingWindow();
         }
 

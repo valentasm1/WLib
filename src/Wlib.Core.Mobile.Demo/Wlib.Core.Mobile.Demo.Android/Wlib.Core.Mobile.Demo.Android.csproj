@@ -97,6 +97,10 @@
       <Project>{b549e6ee-b937-45fc-a492-401893d9557f}</Project>
       <Name>WLib.Core.Mobile</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Wlib.Streaming.Android\Wlib.Streaming.Android.csproj">
+      <Project>{20298510-c972-40c9-96fb-1529293a51a9}</Project>
+      <Name>Wlib.Streaming.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wlib.Core.Mobile.Demo\Wlib.Core.Mobile.Demo.csproj">
       <Project>{9D7941D0-EBA0-4C4A-B4BC-D21775867DEE}</Project>
       <Name>Wlib.Core.Mobile.Demo</Name>
