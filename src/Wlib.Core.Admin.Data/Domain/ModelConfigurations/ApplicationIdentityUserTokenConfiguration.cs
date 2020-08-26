@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Kosmos.Core.Data.Domain.ModelConfigurations
+namespace Wlib.Core.Admin.Data.Domain.ModelConfigurations
 {
     public class ApplicationIdentityUserTokenConfiguration : IEntityTypeConfiguration<IdentityUserToken<string>>
     {

@@ -4,8 +4,8 @@ using System.Text;
 
 namespace WLib.Core.Mobile.Services.AppServices
 {
-    public interface IYaseaaStreaming
+    public interface IStreamingProvider
     {
-        void ShowStreamingWindow();
+        void ShowStreamingWindow(string streamingUrl);
     }
 }

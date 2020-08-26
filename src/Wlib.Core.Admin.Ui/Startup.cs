@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -13,8 +14,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProtoBuf.Grpc.Server;
+using Wlib.Core.Admin.Data.Context;
 using Wlib.Core.Admin.Ui.Areas.Identity;
 using Wlib.Core.Admin.Ui.Data;
+using Wlib.Core.Admin.Ui.Services;
 
 namespace Wlib.Core.Admin.Ui
 {
@@ -43,7 +47,6 @@ namespace Wlib.Core.Admin.Ui
                 //.AllowAnyHeader()
                 //.AllowAnyMethod()
                 //.AllowCredentials())
-
             });
 
             services.AddCodeFirstGrpc(config =>

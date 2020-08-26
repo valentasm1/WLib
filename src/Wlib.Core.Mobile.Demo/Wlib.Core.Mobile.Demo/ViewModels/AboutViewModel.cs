@@ -17,8 +17,8 @@ namespace Wlib.Core.Mobile.Demo.ViewModels
 
         private async Task StartActivity()
         {
-            //DependencyService.Register<IYaseaaStreaming>();
-            DependencyService.Get<IYaseaaStreaming>().ShowStreamingWindow();
+            //DependencyService.Register<IStreamingProvider>();
+            DependencyService.Get<IStreamingProvider>().ShowStreamingWindow("rtmp://62.77.152.170:1935/live/test");
         }
 
         public ICommand OpenWebCommand { get; }

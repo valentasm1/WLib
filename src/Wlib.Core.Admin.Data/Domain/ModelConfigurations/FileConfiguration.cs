@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Wlib.Core.Admin.Data.Domain.Entities;
 
-namespace Kosmos.Core.Data.Domain.ModelConfigurations
+namespace Wlib.Core.Admin.Data.Domain.ModelConfigurations
 {
     public class FileConfiguration : BaseEntityTypeConfiguration<FileEntity>
     {

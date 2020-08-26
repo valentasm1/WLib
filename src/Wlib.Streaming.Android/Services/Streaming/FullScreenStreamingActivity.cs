@@ -1,9 +1,12 @@
 ﻿using System;
+using Android;
 using Android.App;
+using Android.Content.PM;
 using Android.Content.Res;
 using Android.Hardware.Camera2;
 using Android.OS;
 using Android.Runtime;
+using Android.Views;
 using Android.Widget;
 using Com.Github.Faucamp.Simplertmp;
 using Java.IO;
@@ -16,7 +19,8 @@ namespace Wlib.Streaming.Android.Services.Streaming
     [Activity]
     public class FullScreenStreamingActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, RtmpHandler.IRtmpListener, SrsRecordHandler.ISrsRecordListener, SrsEncodeHandler.ISrsEncodeListener
     {
-        const string rtmpUrl = "rtmp://62.77.152.170:1935/live/test";
+        //const string rtmpUrl = "rtmp://62.77.152.170:1935/live/test";
+        private string rtmpUrl = "";
 
         // TODO: Set up local storage/recording
         string recPath = "storage/recording";
@@ -32,14 +36,32 @@ namespace Wlib.Streaming.Android.Services.Streaming
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            Window.AddFlags(WindowManagerFlags.KeepScreenOn);
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.StreamingLayout);
+            RequestedOrientation = ScreenOrientation.FullSensor;
+
+            rtmpUrl = Intent.GetStringExtra("rtmpUrl");
 
             btnPublish = (Button) FindViewById(Resource.Id.publish);
             btnSwitchCamera = (Button) FindViewById(Resource.Id.swCam);
             //btnRecord = (Button)FindViewById(Resource.Id.record);
             //btnSwitchEncoder = (Button)FindViewById(Resource.Id.swEnc);
+
+            mPublisher = new SrsPublisher((SrsCameraView) FindViewById(Resource.Id.glsurfaceview_camera));
+
+            mPublisher.SetEncodeHandler(new SrsEncodeHandler(this));
+            mPublisher.SetRtmpHandler(new RtmpHandler(this));
+            mPublisher.SetRecordHandler(new SrsRecordHandler(this));
+            mPublisher.SetPreviewResolution(640, 360);
+            mPublisher.SetOutputResolution(360, 640);
+            mPublisher.SetVideoHDMode();
+            mPublisher.StartCamera();
+
+            btnPublish.Click += OnPublishClick;
         }
+
 
         protected void OnPublishClick(object sender, EventArgs e)
         {
